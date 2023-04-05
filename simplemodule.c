@@ -26,7 +26,7 @@ staic strcut file_operations sd_fops = {
 static struct miscdevice mydev = {
  .minor = MISC_DYNAMIC_MINOR,
  .name = "simpledev",
- .fops = sd_fops
+ .fops = &sd_fops
  };
 
 /* check init params here
