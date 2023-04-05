@@ -13,7 +13,7 @@ MODULE_LICENSE("GPL");
 MODULE_AUTHOR("csc");
 MODULE_DESCRIPTION("simple device");
 
-staic strcut file_operations sd_fops = {
+static struct file_operations sd_fops = {
  .open = NULL,
  .close = NULL,
  .read = NULL,
