@@ -36,6 +36,7 @@ static struct miscdevice mydev = {
 
 static int __init simpledev_init(void)
 {
+ misc_register(&mydev);
  printk(KERN_INFO "reverse device has been registered\n");    
  return 0;
 } 
