@@ -7,4 +7,22 @@ MODULE_AUTHOR("csc");
 MODULE_DESCRIPTION("simple device");
 
 
+/* check init params here
+*
+*
+*/
+static int __init simpledev_init(void)
+{
+ printk(KERN_INFO "reverse device has been registered\n");    
+ return 0;
+} 
+
+static void __exit simpledev_exit(void){    
+ /* check this in demsg */
+ printk(KERN_INFO "reverse device has been unregistered\n");
+} 
+
+module_init(reverse_init);
+module_exit(reverse_exit);
+
  
