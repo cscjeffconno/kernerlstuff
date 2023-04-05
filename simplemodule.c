@@ -18,7 +18,7 @@ staic strcut file_operations sd_fops = {
  .close = NULL,
  .read = NULL,
  .write = NULL,
- .llseck =NULL
+ .llseck = noop_llseek 
  
 };
 
