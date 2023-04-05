@@ -1,3 +1,10 @@
+/* sample misc device driver.
+*
+*
+*/
+
+
+
 #include <linux/init.h>
 #include <linux/kernel.h>
 #include <linux/module.h> 
@@ -7,10 +14,17 @@ MODULE_AUTHOR("csc");
 MODULE_DESCRIPTION("simple device");
 
 
+static struct miscdevice mydev = {
+ .minor = MISC_DYNAMIC_MINOR,
+ .name = "simpledev",
+ .fops = sd_fops
+ };
+
 /* check init params here
 *
 *
 */
+
 static int __init simpledev_init(void)
 {
  printk(KERN_INFO "reverse device has been registered\n");    
